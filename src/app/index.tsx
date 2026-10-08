@@ -16,7 +16,7 @@ export default function ProfileScreen() {
         <View style={styles.avatarContainer}>
           <View style={styles.avatarWrapper}>
             <Image
-              source={{ uri: 'https://i.pravatar.cc/150?img=11' }}
+              source={require('../../assets/images/profile_avatar.jpg')}
               style={styles.avatar}
             />
             <View style={styles.badgeContainer}>
@@ -31,14 +31,14 @@ export default function ProfileScreen() {
         <View style={styles.infoSection}>
           <View style={styles.infoRow}>
             <Text style={styles.label}>Name</Text>
-            <Text style={styles.value}>Diluka</Text>
+            <Text style={styles.value}>Dineth</Text>
           </View>
 
           <View style={styles.infoRow}>
             <Text style={styles.label}>Email</Text>
             <View style={styles.valueWithIcon}>
               <MaterialIcons name="email" size={20} color="black" style={styles.icon} />
-              <Text style={styles.value}>diluka.w@nsbm.ac.lk</Text>
+              <Text style={styles.value}>dinethprashansa@gmail.com</Text>
             </View>
           </View>
 
