@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
 
 export default function ProfileScreen() {
+  const [points, setPoints] = useState(0);
+
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       {/* Header */}
@@ -46,14 +48,18 @@ export default function ProfileScreen() {
             <Text style={styles.label}>Points</Text>
             <View style={styles.valueWithIcon}>
               <FontAwesome name="star" size={20} color="black" style={styles.icon} />
-              <Text style={styles.value}>0</Text>
+              <Text style={styles.value}>{points}</Text>
             </View>
           </View>
         </View>
       </View>
 
       {/* FAB */}
-      <TouchableOpacity style={styles.fab} activeOpacity={0.8}>
+      <TouchableOpacity 
+        style={styles.fab} 
+        activeOpacity={0.8}
+        onPress={() => setPoints(prev => prev + 1)}
+      >
         <MaterialIcons name="add" size={28} color="white" />
       </TouchableOpacity>
     </SafeAreaView>
